@@ -1,0 +1,61 @@
+Using TensorFlow backend.
+(45000, 32, 32, 3) (5000, 32, 32, 3)
+Train on 45000 samples, validate on 5000 samples
+Epoch 1/25
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE3 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.1 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use SSE4.2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use AVX2 instructions, but these are available on your machine and could speed up CPU computations.
+W tensorflow/core/platform/cpu_feature_guard.cc:45] The TensorFlow library wasn't compiled to use FMA instructions, but these are available on your machine and could speed up CPU computations.
+45000/45000 [==============================] - 485s - loss: 0.0242 - acc: 0.5604 - val_loss: 0.0169 - val_acc: 0.6052
+Epoch 2/25
+45000/45000 [==============================] - 470s - loss: 0.0160 - acc: 0.6173 - val_loss: 0.0148 - val_acc: 0.6104
+Epoch 3/25
+45000/45000 [==============================] - 472s - loss: 0.0146 - acc: 0.6275 - val_loss: 0.0138 - val_acc: 0.6351
+Epoch 4/25
+45000/45000 [==============================] - 468s - loss: 0.0136 - acc: 0.6508 - val_loss: 0.0130 - val_acc: 0.6579
+Epoch 5/25
+45000/45000 [==============================] - 469s - loss: 0.0130 - acc: 0.6762 - val_loss: 0.0124 - val_acc: 0.6914
+Epoch 6/25
+45000/45000 [==============================] - 480s - loss: 0.0125 - acc: 0.6876 - val_loss: 0.0127 - val_acc: 0.6859
+Epoch 7/25
+45000/45000 [==============================] - 469s - loss: 0.0122 - acc: 0.6953 - val_loss: 0.0121 - val_acc: 0.6972
+Epoch 8/25
+45000/45000 [==============================] - 500s - loss: 0.0119 - acc: 0.7005 - val_loss: 0.0116 - val_acc: 0.7110
+Epoch 9/25
+45000/45000 [==============================] - 465s - loss: 0.0117 - acc: 0.7031 - val_loss: 0.0115 - val_acc: 0.7120
+Epoch 10/25
+45000/45000 [==============================] - 466s - loss: 0.0114 - acc: 0.7063 - val_loss: 0.0111 - val_acc: 0.6823
+Epoch 11/25
+45000/45000 [==============================] - 467s - loss: 0.0112 - acc: 0.7089 - val_loss: 0.0109 - val_acc: 0.7002
+Epoch 12/25
+45000/45000 [==============================] - 464s - loss: 0.0110 - acc: 0.7116 - val_loss: 0.0109 - val_acc: 0.7104
+Epoch 13/25
+45000/45000 [==============================] - 488s - loss: 0.0108 - acc: 0.7140 - val_loss: 0.0105 - val_acc: 0.7175
+Epoch 14/25
+45000/45000 [==============================] - 477s - loss: 0.0106 - acc: 0.7154 - val_loss: 0.0111 - val_acc: 0.7031
+Epoch 15/25
+45000/45000 [==============================] - 467s - loss: 0.0104 - acc: 0.7176 - val_loss: 0.0100 - val_acc: 0.7207
+Epoch 16/25
+45000/45000 [==============================] - 468s - loss: 0.0102 - acc: 0.7185 - val_loss: 0.0099 - val_acc: 0.7304
+Epoch 17/25
+45000/45000 [==============================] - 468s - loss: 0.0100 - acc: 0.7208 - val_loss: 0.0097 - val_acc: 0.7202
+Epoch 18/25
+45000/45000 [==============================] - 463s - loss: 0.0098 - acc: 0.7224 - val_loss: 0.0096 - val_acc: 0.7311
+Epoch 19/25
+45000/45000 [==============================] - 463s - loss: 0.0097 - acc: 0.7226 - val_loss: 0.0095 - val_acc: 0.7181
+Epoch 20/25
+45000/45000 [==============================] - 462s - loss: 0.0096 - acc: 0.7226 - val_loss: 0.0093 - val_acc: 0.7280
+Epoch 21/25
+45000/45000 [==============================] - 463s - loss: 0.0094 - acc: 0.7243 - val_loss: 0.0097 - val_acc: 0.7374
+Epoch 22/25
+45000/45000 [==============================] - 461s - loss: 0.0093 - acc: 0.7254 - val_loss: 0.0093 - val_acc: 0.7218
+Epoch 23/25
+45000/45000 [==============================] - 466s - loss: 0.0092 - acc: 0.7258 - val_loss: 0.0089 - val_acc: 0.7269
+Epoch 24/25
+45000/45000 [==============================] - 465s - loss: 0.0091 - acc: 0.7262 - val_loss: 0.0090 - val_acc: 0.7393
+Epoch 25/25
+45000/45000 [==============================] - 471s - loss: 0.0090 - acc: 0.7270 - val_loss: 0.0087 - val_acc: 0.7410
+(100, 32, 32, 3)
+
