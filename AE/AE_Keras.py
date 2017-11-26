@@ -14,11 +14,8 @@ from keras.models import Model
 
 # In[2]:
 
-ds = pd.read_csv('../data.csv')
+ds = pd.read_csv('../train.csv')
 data = ds.values
-
-
-# In[3]:
 
 X_data = data[:, 1:]
 X_std = X_data/255.0
@@ -60,9 +57,9 @@ decoder = Model(inputs=dec_inp, outputs=x)
 # In[11]:
 
 autoencoder.compile(loss='mse', optimizer='adam', metrics = ['accuracy'])
-hist = autoencoder.fit(X_train, X_train, epochs=50, batch_size=100, shuffle=True, validation_data=(X_val, X_val))
+hist = autoencoder.fit(X_train, X_train, epochs=50, batch_size=128, shuffle=True, validation_data=(X_val, X_val))
 
-auto_encoder_encodes = encoder.predict(X_train)                  # Encoder generates a hidden-dimension (64 dim) representation of original data (784 dim)
+auto_encoder_encodes = encoder.predict(X_train[:100])                  # Encoder generates a hidden-dimension (64 dim) representation of original data (784 dim)
 auto_encoder_decodes = decoder.predict(auto_encoder_encodes)     # Decoder decodes hidden-representation (64 dim) given by encoder to dimensions of input data (784 dim)
 
 
@@ -86,13 +83,10 @@ for ix in range(100):
     plt.title('Original')
     plt.imshow(X_train[ix].reshape((28, 28)), cmap='gray')
     plt.subplot(1,2,2)
-    plt.title('AutoEncoder Regeneration')
+    plt.title('Simple AutoEncoder Regeneration')
     plt.imshow(auto_encoder_decodes[ix].reshape((28, 28)), cmap='gray')
-    plt.savefig(('#' + str(ix) + ': AE-Regenerated ' + LABELS[data[ix, 0]] + '.png'), dpi=326)
+    plt.savefig(('#' + str(ix) + ': Simple_AE-Regenerated ' + LABELS[data[ix, 0]] + '.png'), dpi=326)
     plt.close()
 
 
 # In[ ]:
-
-
-

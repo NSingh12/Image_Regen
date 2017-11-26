@@ -31,18 +31,12 @@ n_val = int(0.16*X_std.shape[0])
 X_train = X_std[:n_train]
 X_val = X_std[n_train:n_train+n_val]
 
-ds = pd.read_csv('../test.csv')
-data = ds.values
-
-X_test = data[:, 1:]
-X_test = X_test/255.0
-
-print X_train.shape, X_val.shape, X_test.shape
+print X_train.shape, X_val.shape
 
 
 # In[24]:
 
-batch_size = 100
+batch_size = 128
 original_dim = 784
 latent_dim = 16
 intermediate_dim = 256
@@ -94,12 +88,11 @@ generator = Model(decoder_input, _x_decoded_mean)
 # In[29]:
 
 vae.compile(optimizer='adam', loss='mse', metrics = ['accuracy'])
-vae.fit(X_train, X_train, shuffle=True, epochs=epochs, batch_size=batch_size, validation_data=(X_test, X_test))
-
+vae.fit(X_train, X_train, shuffle=True, epochs=epochs, batch_size=batch_size, validation_data=(X_val, X_val))
 
 # In[ ]:
 
-X_test_encoded = encoder.predict(X_test[:100])
+X_test_encoded = encoder.predict(X_train[:100])
 X_test_decoded = generator.predict(X_test_encoded)
 
 
@@ -121,9 +114,9 @@ for ix in range(100):
     plt.figure(ix)
     plt.subplot(1,2,1)
     plt.title('Original')
-    plt.imshow(X_test[ix].reshape((28, 28)), cmap='gray')
+    plt.imshow(X_train[ix].reshape((28, 28)), cmap='gray')
     plt.subplot(1,2,2)
-    plt.title('Variational_AutoEncoder Regeneration')
+    plt.title('Variational AutoEncoder Regeneration')
     plt.imshow(X_test_decoded[ix].reshape((28, 28)), cmap='gray')
     plt.savefig(('#' + str(ix) + ': Variational_AE-Regenerated ' + LABELS[data[ix, 0]] + '.png'), dpi=326)
     plt.close()
